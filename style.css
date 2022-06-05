@@ -319,17 +319,17 @@ p {
     
 @media only screen and (max-width: 470px) {
     #presentation h1:nth-child(1) {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         max-width: 65px;
     }
 
     #presentation h1:nth-child(2) {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         max-width: 186px;
     }
 
     #presentation h1:nth-child(3) {
-        font-size: 2.8rem;
+        font-size: 3.5rem;
         max-width: 300px;
     }
 }
