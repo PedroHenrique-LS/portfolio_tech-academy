@@ -5,24 +5,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/*Criar variaveis para as corse*/
-
-:root {
-    /*CORES*/
-
-    --cor0: ;
-    --cor1: ;
-    --cor2: ;
-
-    /*FONTES*/
-
-    --fonte-padrao: Arial, Helvetica, sans-serif;
-
-}
 
 html{
     font-size: 10px;
-    font-family: 'Poppins', var(--fonte-padrao);
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -30,44 +16,127 @@ a {
     text-decoration: none;
 }
 
-/* Seção de apresentação */
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 
-.presentation-container {
-    min-height: 100vh;
+p {
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 200;
+    letter-spacing: 0.05rem;
+}
+
+.container{
+    min-height: 80vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+.section_title {
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    margin: 60px 0px 70px 0px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+/* Seção do header */
+
+header {
+    background-image: linear-gradient(to top, hsl(249, 85%, 8%), hsl(248, 88%, 3%), hsl(248, 90%, 3%), hsl(248, 95%, 3%));
+    height: 150px;
+}
+
+#header-title h1{
+    display: block;
+    color: white;
+    font-size: 4rem;
+    margin: auto;
+    width: fit-content;
+}
+
+div#internal-links{
+    display: block;
+    margin: auto;
+    float: left;
+    margin-top: -8px;
+}
+
+div#external-links{
+    display: block;
+    margin: auto;
+    float: right;
+    margin-top: -5px;
+}
+
+#internal-links a {
+    display: inline-block;
+    padding: 8px 35px;
+    margin: 1px 2px;
+    background-color: rgb(179, 104, 179);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    
+}
+
+#external-links img {
+    width: 20px;
+    height: 20px;
+}
+
+#external-links a{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: gold;
+    border-radius: 2px;
+    margin: 10px 3px;
+}
+
+/* Seção de apresentação */
+
 #presentation {
     background-image: url(./imagens/imagem01.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top center;
     position: relative;
     z-index: 1;
 }
 
-#presentation  h1 {
+#presentation h1 {
     display: block;
     width: fit-content;
-    font-weight: 600;
     font-size: 5rem;
     position: relative;
-    color: transparent;
-    animation: text_reveal .5 ease forwards;
-    animation-delay: 1.5s;
+    color: white;
+    border-right: 4px solid transparent;
+    animation: blinkCursor 600ms steps(40) infinite normal,;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 #presentation h1:nth-child(1){
-    animation-delay: .9s;
+    max-width: 108px; 
+    animation: blinkCursor 600ms steps(25) infinite normal, typing 4s steps(25) .8s normal both, hiddenCursor .1s 2.5s ease forwards;
 }
 #presentation h1:nth-child(2){
-    animation-delay: 2s;
+    max-width: 330px;
+    animation: blinkCursor 600ms steps(35) 2.8s infinite normal, typing 4s steps(35) 3s  normal both, hiddenCursor .1s 6.6s ease forwards;
+    
 }
 #presentation h1:nth-child(3){
-    animation: text_reveal_name .5s ease forwards;
-    animation-delay: 2.9s;
+    color: gold;
+   max-width: 448px;
+   animation: blinkCursor 600ms steps(40) 6.8s infinite normal, typing 4s steps(40) 7s  normal both;
 }
 
 #presentation .cta{
@@ -81,37 +150,20 @@ a {
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin-top: 30px;
+    
 }
+
 
 #presentation .cta:hover {
     color: white;
     font-weight: 500;
     background-color: gold;
-    box-shadow: 0px 0px 60px rgba(255, 217, 0, 0.774);
+    box-shadow: 0px 0px 60px rgba(255, 217, 0, 0.89);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.89);
     transition-duration: .7s;
 }
 
-#presentation h1 span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 0%;
-    animation: texte_reveal_box 1s ease;
-    animation-delay: .5s;
-    background-color: gold;
-}
 
-#presentation h1:nth-child(1) span{
-    animation-delay: .5s;
-}
-#presentation h1:nth-child(2) span{
-    animation-delay: 1.5s;
-}
-#presentation h1:nth-child(3) span{
-    animation-delay: 2.5s;
-}
 
 #presentation::after {
     content: '';
@@ -121,31 +173,160 @@ a {
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.534);
-    z-index: -1;
+    z-index: -2;
 }
+
+/* Seção de portfolio */
+
+#portfolio  .portfolio {
+    flex-direction: column;
+    margin: 0px auto;
+    max-width: 1200px;
+}
+
+#portfolio .portfolio_header h1 {
+    margin-bottom: 50px;
+}
+
+#portfolio .all_projects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#portfolio .project_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 95%;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+#portfolio .porject_info {
+    padding: 30px;
+    flex-basis: 50%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    background-image: linear-gradient(to bottom, #100119 , #030108);
+    
+    color: white;
+}
+
+#portfolio .porject_info h1 {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+#portfolio .porject_info h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+#portfolio .project_img {
+    flex-basis: 50%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+#portfolio .project_img::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+    opacity: 0.7;
+    
+}
+
+#portfolio .project_img img {
+    transition: 0.5s ease transform;
+}
+
+#portfolio .project_item:hover .project_img img {
+    transform: scale(1.1);
+}
+
 
 /*keyframes*/
 
-@keyframes text_reveal {
-    100%{
-        color: white;
+@keyframes blinkCursor {
+    from{
+        border-right-color: gold;
+    }
+    to{
+        border-right-color: transparent;
     }
 }
 
-@keyframes text_reveal_name {
-    100%{
-        color: gold;
-        font-weight: 700;
-    }
-}
-
-@keyframes texte_reveal_box {
-    50%{
-        width: 100%;
-        left: 0;
-    }
-    100%{
+@keyframes typing {
+    from{
         width: 0;
-        left: 100%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes hiddenCursor {
+    from {
+        border-right-color: black;
+    }
+    to {
+        border-right-style: hidden;
+    }
+}
+
+
+/* Media Query */
+
+         /* Para telas menores */
+@media only screen and (max-width: 470px) {
+    #presentation h1:nth-child(1) {
+        font-size: 2.8rem;
+        max-width: 65px;
+    }
+
+    #presentation h1:nth-child(2) {
+        font-size: 2.8rem;
+        max-width: 186px;
+    }
+
+    #presentation h1:nth-child(3) {
+        font-size: 2.8rem;
+        max-width: 300px;
+    }
+}
+
+        /* Para telas maiores */
+@media only screen and (min-width: 768px) {
+    #portfolio .project_item {
+        flex-direction: row;
+        height: 400px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    #portfolio .all_projects .porject_info {
+        height: 100%;
+    }
+
+    #portfolio .all_projects .porject_img {
+        height: 100%;
+    }
+
+    #portfolio .project_item:nth-child(even) {
+        flex-direction: row-reverse;
     }
 }
